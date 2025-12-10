@@ -166,10 +166,10 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-[#2056AE]">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl font-bold mb-6 text-white">Создаем мир, в который хочется вернуться</h2>
+            <h2 className="text-4xl font-bold mb-6 text-[#1E3A8A]">Создаем мир, в который хочется вернуться</h2>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
               <img
                 src="https://cdn.poehali.dev/projects/f5f859bf-034e-42fc-886d-78fd0dcd5998/files/f0262546-00ad-4ea2-80c8-8cab4844fcfa.jpg"
@@ -183,7 +183,7 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <p className="text-lg text-white/90 mt-8 leading-relaxed max-w-3xl">
+            <p className="text-lg text-foreground/80 mt-8 leading-relaxed max-w-3xl">
               &quot;Бархатные сезоны&quot; — это надежное место для роста и развития в окружении
               профессионалов индустрии гостеприимства.
             </p>
@@ -191,18 +191,18 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-[#2563EB]">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl font-bold mb-3 text-white">Программа лояльности</h2>
-            <p className="text-lg text-white/90 mb-8">
+            <h2 className="text-4xl font-bold mb-3 text-[#1E3A8A]">Программа лояльности</h2>
+            <p className="text-lg text-muted-foreground mb-8">
               У сотрудников специальные тарифы и минимальные цены
             </p>
             <div className="grid md:grid-cols-5 gap-4">
               {loyaltyProgram.map((item, idx) => (
                 <Card
                   key={idx}
-                  className="p-6 bg-white/10 backdrop-blur text-white hover:bg-white/20 transition-all shadow-lg"
+                  className={`p-6 ${idx % 2 === 0 ? 'bg-[#2563EB]' : 'bg-[#2056AE]'} text-white hover:opacity-90 transition-all shadow-lg`}
                 >
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4 mx-auto">
                     <Icon name={item.icon} size={24} className="text-white" />
@@ -216,10 +216,10 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-[#2056AE]">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl font-bold mb-8 text-white">Корпоративные мероприятия</h2>
+            <h2 className="text-4xl font-bold mb-8 text-[#1E3A8A]">Корпоративные мероприятия</h2>
             <Carousel className="w-full">
               <CarouselContent>
                 {events.map((event, idx) => (
@@ -230,8 +230,8 @@ const Index = () => {
                         alt={event.title}
                         className="w-full aspect-video object-cover"
                       />
-                      <div className="p-4 bg-white/10 backdrop-blur">
-                        <h3 className="text-lg font-bold text-white">{event.title}</h3>
+                      <div className="p-4 bg-white">
+                        <h3 className="text-lg font-bold text-[#111827]">{event.title}</h3>
                       </div>
                     </div>
                   </CarouselItem>
@@ -339,10 +339,10 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="vacancies" className="py-16 bg-[#2056AE]">
+      <section id="vacancies" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl font-bold mb-8 text-white">Найди свою вакансию</h2>
+            <h2 className="text-4xl font-bold mb-8 text-[#1E3A8A]">Найди свою вакансию</h2>
             <div className="flex flex-wrap gap-3">
               {categories.map((cat) => (
                 <Button
@@ -405,10 +405,10 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-[#2563EB]">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl font-bold mb-8 text-white">Наша команда</h2>
+            <h2 className="text-4xl font-bold mb-8 text-[#1E3A8A]">Наша команда</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {gallery.map((img, idx) => (
                 <div
