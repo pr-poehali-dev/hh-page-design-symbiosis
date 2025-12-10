@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState('Все');
@@ -62,6 +63,25 @@ const Index = () => {
       icon: 'BookOpen',
       title: 'Обучение с нуля',
       description: 'Программы для специалистов без опыта',
+    },
+  ];
+
+  const events = [
+    {
+      image: 'https://cdn.poehali.dev/projects/f5f859bf-034e-42fc-886d-78fd0dcd5998/files/d6d33866-6ee4-4d33-95f9-5408e574c9f0.jpg',
+      title: 'Корпоративные празднования',
+    },
+    {
+      image: 'https://cdn.poehali.dev/projects/f5f859bf-034e-42fc-886d-78fd0dcd5998/files/44b94bdc-1cd6-44ae-897a-7364279d1276.jpg',
+      title: 'Team-building мероприятия',
+    },
+    {
+      image: 'https://cdn.poehali.dev/projects/f5f859bf-034e-42fc-886d-78fd0dcd5998/files/632f8c9b-f626-4564-9528-f8671591caa5.jpg',
+      title: 'Спортивные соревнования',
+    },
+    {
+      image: 'https://cdn.poehali.dev/projects/f5f859bf-034e-42fc-886d-78fd0dcd5998/files/8625ceb6-90c1-49f3-bb1b-2a7d42d1473d.jpg',
+      title: 'Творческие вечера',
     },
   ];
 
@@ -198,22 +218,28 @@ const Index = () => {
 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl">
+          <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl font-bold mb-8 text-[#1E3A8A]">Корпоративные мероприятия</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {gallery.slice(0, 2).map((img, idx) => (
-                <div
-                  key={idx}
-                  className="rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
-                >
-                  <img
-                    src={img}
-                    alt={`Мероприятие ${idx + 1}`}
-                    className="w-full aspect-video object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+            <Carousel className="w-full">
+              <CarouselContent>
+                {events.map((event, idx) => (
+                  <CarouselItem key={idx} className="md:basis-1/2">
+                    <div className="rounded-3xl overflow-hidden shadow-lg">
+                      <img
+                        src={event.image}
+                        alt={event.title}
+                        className="w-full aspect-video object-cover"
+                      />
+                      <div className="p-4 bg-white">
+                        <h3 className="text-lg font-bold text-[#111827]">{event.title}</h3>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="-left-12" />
+              <CarouselNext className="-right-12" />
+            </Carousel>
           </div>
         </div>
       </section>
@@ -239,7 +265,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-r from-[#EE5F0F] to-[#2563EB] rounded-3xl mx-4 md:mx-auto max-w-6xl mt-8 shadow-2xl">
+      <section className="py-16 bg-[#2563EB] rounded-3xl mx-4 md:mx-auto max-w-6xl mt-8 shadow-2xl">
         <div className="container mx-auto px-8">
           <h2 className="text-4xl font-bold mb-3 text-white text-center">Карьерный рост</h2>
           <p className="text-lg text-white/90 mb-12 text-center">
