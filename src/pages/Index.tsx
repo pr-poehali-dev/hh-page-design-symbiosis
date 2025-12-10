@@ -8,12 +8,12 @@ const Index = () => {
 
   const categories = [
     'Все',
-    'Разработка',
-    'Дизайн',
-    'Маркетинг',
+    'Гостиничный сервис',
+    'Кухня',
+    'Администрация',
     'HR',
     'Финансы',
-    'Продажи',
+    'Маркетинг',
   ];
 
   const advantages = [
@@ -24,7 +24,7 @@ const Index = () => {
     },
     {
       number: '2500+',
-      description: 'сотрудников уже работают в компании',
+      description: 'сотрудников уже работают в городе-отеле',
       color: 'bg-primary',
     },
     {
@@ -34,31 +34,39 @@ const Index = () => {
     },
   ];
 
-  const benefits = [
-    {
-      icon: 'Award',
-      title: 'Лидер рынка',
-      description: 'Работаем с лучшими проектами и технологиями',
-    },
-    {
-      icon: 'Building',
-      title: 'Инфраструктура',
-      description: 'Уникальная инфраструктура, аналогов которой нет в мире',
-    },
+  const loyaltyProgram = [
+    { icon: 'Heart', title: 'Центр здоровья', description: 'ДМС и wellness программы' },
+    { icon: 'Waves', title: 'Бассейн', description: 'Бесплатный доступ для сотрудников' },
+    { icon: 'Dumbbell', title: 'Спортзал', description: 'Фитнес-центр на территории' },
+    { icon: 'Sparkles', title: 'Развлечения', description: 'Корпоративные мероприятия' },
+    { icon: 'Tag', title: 'Скидки', description: 'Специальные тарифы и предложения' },
+  ];
+
+  const trainingTypes = [
     {
       icon: 'Users',
-      title: 'Команда профессионалов',
-      description: 'Окружение единомышленников для роста и развития',
+      title: 'Уникальные тренинги',
+      description: 'Авторские программы для развития навыков',
     },
     {
-      icon: 'TrendingUp',
-      title: 'Карьерный рост',
-      description: 'Прозрачная система развития и повышения',
+      icon: 'Briefcase',
+      title: 'Авторские бизнес-игры',
+      description: 'Практическое обучение в игровом формате',
+    },
+    {
+      icon: 'GraduationCap',
+      title: 'Внешнее обучение',
+      description: 'Оплата курсов и профессиональных программ',
+    },
+    {
+      icon: 'BookOpen',
+      title: 'Обучение с нуля',
+      description: 'Программы для специалистов без опыта',
     },
   ];
 
   const gallery = [
-    'https://cdn.poehali.dev/projects/f5f859bf-034e-42fc-886d-78fd0dcd5998/files/9d43c361-c39f-46a2-a58d-c03b94bbf562.jpg',
+    'https://cdn.poehali.dev/projects/f5f859bf-034e-42fc-886d-78fd0dcd5998/files/d6d33866-6ee4-4d33-95f9-5408e574c9f0.jpg',
     'https://cdn.poehali.dev/projects/f5f859bf-034e-42fc-886d-78fd0dcd5998/files/44b94bdc-1cd6-44ae-897a-7364279d1276.jpg',
     'https://cdn.poehali.dev/projects/f5f859bf-034e-42fc-886d-78fd0dcd5998/files/632f8c9b-f626-4564-9528-f8671591caa5.jpg',
     'https://cdn.poehali.dev/projects/f5f859bf-034e-42fc-886d-78fd0dcd5998/files/8625ceb6-90c1-49f3-bb1b-2a7d42d1473d.jpg',
@@ -69,43 +77,54 @@ const Index = () => {
       <header className="py-4 border-b sticky top-0 bg-background/95 backdrop-blur z-50">
         <div className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center gap-8">
-            <h1 className="text-2xl font-bold">О компании</h1>
+            <h1 className="text-xl font-bold">О компании</h1>
             <nav className="hidden md:flex gap-6">
               <a href="#vacancies" className="text-sm hover:text-primary transition-colors">
-                Вакансии <span className="text-muted-foreground">353</span>
+                Вакансии <span className="text-muted-foreground">120</span>
               </a>
             </nav>
           </div>
         </div>
       </header>
 
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 max-w-4xl leading-tight">
-            Poehali.dev — ведущий мировой tech-проект премиум-класса
-          </h2>
+      <section className="relative h-[500px] overflow-hidden">
+        <img
+          src="https://cdn.poehali.dev/projects/f5f859bf-034e-42fc-886d-78fd0dcd5998/files/9cfb4803-b3c7-47d6-9926-aa2c83e89736.jpg"
+          alt="Город-отель Бархатные сезоны"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/40 flex items-center">
+          <div className="container mx-auto px-4">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
+              Город-отель<br />
+              <span className="text-white/90">&quot;Бархатные сезоны&quot;</span>
+            </h2>
+            <p className="text-xl text-white/90 max-w-2xl">
+              Ведущий курорт премиум-класса на Южном берегу
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="py-12 bg-background">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
-            <Card className="p-8 bg-secondary text-white rounded-3xl flex flex-col justify-between min-h-[200px]">
+            <Card className="p-8 bg-primary text-white rounded-3xl flex flex-col justify-between min-h-[200px]">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
                 <Icon name="Award" size={32} className="text-white" />
               </div>
               <p className="text-lg leading-relaxed">
-                Poehali.dev — лидер в России, удостоенный более 100 престижных международных и
-                российских наград
+                Город-отель &quot;Бархатные сезоны&quot; — лидер индустрии гостеприимства, удостоенный
+                более 100 престижных наград
               </p>
             </Card>
 
-            <Card className="p-8 bg-primary text-white rounded-3xl flex flex-col justify-between min-h-[200px]">
+            <Card className="p-8 bg-secondary text-white rounded-3xl flex flex-col justify-between min-h-[200px]">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-6">
                 <Icon name="Building" size={32} className="text-white" />
               </div>
               <p className="text-lg leading-relaxed">
-                Уникальная инфраструктура, аналогов которой нет в мире
+                Уникальная инфраструктура, аналогов которой нет в России
               </p>
             </Card>
           </div>
@@ -135,35 +154,157 @@ const Index = () => {
                 className="w-full aspect-video object-cover"
                 style={{ filter: 'blur(4px)' }}
               />
-              <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+              <div className="absolute inset-0 bg-primary/30 flex items-center justify-center">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Icon name="Play" size={32} className="text-primary ml-1" />
                 </div>
               </div>
             </div>
             <p className="text-lg text-foreground/80 mt-8 leading-relaxed max-w-3xl">
-              Poehali.dev — это надежное место для твоего роста и развития в окружении таких же
-              профессионалов, готовых делиться опытом и поддерживать на каждом этапе карьеры.
+              &quot;Бархатные сезоны&quot; — это надежное место для роста и развития в окружении
+              профессионалов индустрии гостеприимства.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-primary/5">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {benefits.map((benefit, idx) => (
-                <Card key={idx} className="p-6 hover:shadow-lg transition-all">
-                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <Icon name={benefit.icon} className="text-primary" size={28} />
+            <h2 className="text-4xl font-bold mb-3">Программа лояльности</h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              У сотрудников специальные тарифы и минимальные цены
+            </p>
+            <div className="grid md:grid-cols-5 gap-4">
+              {loyaltyProgram.map((item, idx) => (
+                <Card
+                  key={idx}
+                  className="p-6 bg-primary text-white hover:bg-primary/90 transition-all"
+                >
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4 mx-auto">
+                    <Icon name={item.icon} size={24} className="text-white" />
                   </div>
-                  <h3 className="font-bold text-lg mb-2">{benefit.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {benefit.description}
-                  </p>
+                  <h3 className="font-bold text-center mb-2 text-sm">{item.title}</h3>
+                  <p className="text-xs text-center opacity-90">{item.description}</p>
                 </Card>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl">
+            <h2 className="text-4xl font-bold mb-8">Корпоративные мероприятия</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {gallery.slice(0, 2).map((img, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
+                >
+                  <img
+                    src={img}
+                    alt={`Мероприятие ${idx + 1}`}
+                    className="w-full aspect-video object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-primary text-white rounded-3xl mx-4 md:mx-auto max-w-6xl">
+        <div className="container mx-auto px-8">
+          <h2 className="text-4xl font-bold mb-3">Внутреннее и внешнее обучение</h2>
+          <p className="text-lg mb-8 opacity-90">
+            Наша Академия &quot;Бархатные сезоны&quot; помогает сотрудникам раскрыть свой потенциал,
+            развивая профессиональные и личностные качества
+          </p>
+          <div className="grid md:grid-cols-4 gap-6">
+            {trainingTypes.map((item, idx) => (
+              <div key={idx} className="text-center">
+                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-4 mx-auto">
+                  <Icon name={item.icon} size={32} className="text-white" />
+                </div>
+                <h3 className="font-bold mb-2">{item.title}</h3>
+                <p className="text-sm opacity-90">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gradient-to-r from-primary to-secondary rounded-3xl mx-4 md:mx-auto max-w-6xl mt-8">
+        <div className="container mx-auto px-8">
+          <h2 className="text-4xl font-bold mb-3 text-white text-center">Карьерный рост</h2>
+          <p className="text-lg text-white/90 mb-12 text-center">
+            Вертикальное и горизонтальное развитие
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-white/10 backdrop-blur rounded-2xl p-8">
+              <div className="flex items-center gap-4 mb-6">
+                <img
+                  src="https://cdn.poehali.dev/projects/f5f859bf-034e-42fc-886d-78fd0dcd5998/files/0793f4e4-1c2f-4ec8-886c-e8b2d658ea1f.jpg"
+                  alt="Мария"
+                  className="w-24 h-24 rounded-full object-cover border-4 border-white/30"
+                />
+                <div className="text-white">
+                  <h3 className="text-2xl font-bold">Мария</h3>
+                  <p className="text-white/80">специалист отдела персонала</p>
+                </div>
+              </div>
+              <div className="space-y-3 text-white">
+                <p className="text-sm opacity-90">В компании с 2023 года</p>
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Icon name="ArrowRight" size={16} />
+                  </div>
+                  <div>
+                    <p className="font-bold">Горизонтальное развитие</p>
+                    <p className="text-sm opacity-90">сменила профессию</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Icon name="ArrowUp" size={16} />
+                  </div>
+                  <div>
+                    <p className="font-bold">Вертикальное развитие</p>
+                    <p className="text-sm opacity-90">4 повышения в двух отделах</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur rounded-2xl p-8">
+              <div className="flex items-center gap-4 mb-6">
+                <img
+                  src="https://cdn.poehali.dev/projects/f5f859bf-034e-42fc-886d-78fd0dcd5998/files/c25d4c7e-f245-4535-a5ca-9ed04c311a35.jpg"
+                  alt="Рустам"
+                  className="w-24 h-24 rounded-full object-cover border-4 border-white/30"
+                />
+                <div className="text-white">
+                  <h3 className="text-2xl font-bold">Рустам</h3>
+                  <p className="text-white/80">главный специалист</p>
+                </div>
+              </div>
+              <div className="space-y-3 text-white">
+                <p className="text-sm opacity-90">В компании с 2021 года</p>
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Icon name="ArrowUp" size={16} />
+                  </div>
+                  <div>
+                    <p className="font-bold">Вертикальный рост</p>
+                    <p className="text-sm opacity-90">
+                      от рабочего до главного специалиста по эксплуатации участков
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -185,7 +326,7 @@ const Index = () => {
                   {cat}
                   {cat === 'Все' && (
                     <span className="ml-2 bg-background text-foreground px-2 py-0.5 rounded-full text-sm">
-                      353
+                      120
                     </span>
                   )}
                 </Button>
@@ -195,24 +336,24 @@ const Index = () => {
             <div className="mt-12 grid md:grid-cols-2 gap-6">
               {[
                 {
-                  title: 'Senior Frontend Developer',
-                  location: 'Москва',
-                  salary: 'от 250 000 ₽',
+                  title: 'Администратор отеля',
+                  location: 'Южный берег Крыма',
+                  salary: 'от 80 000 ₽',
                 },
                 {
-                  title: 'Python Backend Engineer',
-                  location: 'Санкт-Петербург',
-                  salary: 'от 200 000 ₽',
+                  title: 'Шеф-повар',
+                  location: 'Южный берег Крыма',
+                  salary: 'от 120 000 ₽',
                 },
                 {
-                  title: 'UI/UX Designer',
-                  location: 'Удаленно',
-                  salary: 'от 150 000 ₽',
+                  title: 'Менеджер по работе с гостями',
+                  location: 'Южный берег Крыма',
+                  salary: 'от 70 000 ₽',
                 },
                 {
-                  title: 'DevOps Engineer',
-                  location: 'Москва',
-                  salary: 'от 220 000 ₽',
+                  title: 'Специалист HR отдела',
+                  location: 'Южный берег Крыма',
+                  salary: 'от 65 000 ₽',
                 },
               ].map((vacancy, idx) => (
                 <Card key={idx} className="p-6 hover:shadow-lg transition-all cursor-pointer">
@@ -260,13 +401,15 @@ const Index = () => {
       <footer className="py-8 border-t bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl flex items-center justify-between">
-            <p className="text-sm text-muted-foreground">© 2024 Poehali.dev</p>
+            <p className="text-sm text-muted-foreground">
+              © 2024 Город-отель &quot;Бархатные сезоны&quot;
+            </p>
             <div className="flex gap-4">
               <Button variant="ghost" size="icon">
-                <Icon name="Linkedin" size={20} />
+                <Icon name="Instagram" size={20} />
               </Button>
               <Button variant="ghost" size="icon">
-                <Icon name="Github" size={20} />
+                <Icon name="Facebook" size={20} />
               </Button>
             </div>
           </div>
